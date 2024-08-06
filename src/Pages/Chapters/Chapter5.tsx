@@ -49,7 +49,7 @@ const Chapter5 = ({}: Props) => {
   return (
     <Page>
       <button className="nextChapterButton" onClick={nextChapter}>
-        Next Chapter..
+        Sonraki Bölüm..
       </button>
       <div className="bookmarks">
         <div

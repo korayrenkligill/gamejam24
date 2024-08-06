@@ -15,7 +15,7 @@ const Chapter4 = ({}: Props) => {
   return (
     <Page>
       <button className="nextChapterButton" onClick={nextChapter}>
-        Next Chapter..
+        Sonraki Bölüm..
       </button>
 
       <Countdown />

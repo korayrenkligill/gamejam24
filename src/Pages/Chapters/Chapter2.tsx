@@ -50,7 +50,7 @@ const Chapter2 = ({}: Props) => {
   return (
     <Page>
       <button className="nextChapterButton" onClick={nextChapter}>
-        Next Chapter..
+        Sonraki Bölüm..
       </button>
       <div className="about-jam">
         <motion.div

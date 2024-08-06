@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useState } from "react";
 import Dialogue from "../json/dialogue.json"; // JSON dosyasını içe aktar
 import { motion } from "framer-motion";
+import { FaAngleRight, FaAngleLeft } from "react-icons/fa6";
 
 import "../styles/Dialogue.scss";
 
@@ -35,16 +36,16 @@ const Dialog: React.FC<DialogProps> = ({ character, changeState }) => {
   };
    */
 
-  const handleNext = useCallback(() => {
+  const handleNext = () => {
+    console.log(currentIndex == conversations.length - 1);
     if (currentIndex === conversations.length - 1) {
-      console.log("Fonksiyon tamamlandığı halde 1 kez daha çağırıldı");
-      changeState(false); // changeState'i çağır
+      changeState(false);
     } else {
       setCurrentIndex((prevIndex) =>
         prevIndex < conversations.length - 1 ? prevIndex + 1 : prevIndex
       );
     }
-  }, [currentIndex, conversations.length, changeState]);
+  };
 
   const handlePrevious = useCallback(() => {
     setCurrentIndex((prevIndex) => (prevIndex > 0 ? prevIndex - 1 : prevIndex));
@@ -65,10 +66,6 @@ const Dialog: React.FC<DialogProps> = ({ character, changeState }) => {
     };
   }, [handleNext, handlePrevious]);
 
-  useEffect(() => {
-    console.log(currentIndex);
-  }, [currentIndex]);
-
   return (
     <motion.section
       className="dialogue"
@@ -85,8 +82,9 @@ const Dialog: React.FC<DialogProps> = ({ character, changeState }) => {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5 }}
             className="dialogue-prev"
-            onClick={handlePrevious}
+            onClick={() => handlePrevious()}
           >
+            <FaAngleLeft />
             Geri
           </motion.button>
         ) : (
@@ -98,9 +96,10 @@ const Dialog: React.FC<DialogProps> = ({ character, changeState }) => {
           exit={{ opacity: 0 }}
           transition={{ duration: 0.5 }}
           className="dialogue-next"
-          onClick={handleNext}
+          onClick={() => handleNext()}
         >
           İleri
+          <FaAngleRight />
         </motion.button>
       </div>
       {conversations.length > 0 ? (

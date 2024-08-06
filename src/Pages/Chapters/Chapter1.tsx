@@ -32,18 +32,19 @@ const Chapter1 = ({}: Props) => {
       <div className="chapter-container" onClick={() => setDialogue(true)}>
         {nextChapterButton && (
           <button className="nextChapterButton" onClick={nextChapter}>
-            Next Chapter..
+            Sonraki Bölüm..
           </button>
         )}
 
         <p
           style={{
             color: "white",
+            zIndex: 888,
             textAlign: "center",
             fontSize: ".875rem",
           }}
         >
-          Tap for Message
+          Mesaj için Tıkla
         </p>
         <Parallax className="mainTree bg" strengthX={0.3} strengthY={0.15}>
           <div></div>
@@ -57,11 +58,13 @@ const Chapter1 = ({}: Props) => {
         <Parallax className="backTree2 bg" strengthX={0.05} strengthY={0.025}>
           <div></div>
         </Parallax>
-        <AnimatePresence mode="wait">
-          {dialogue && (
-            <Dialog character="character1" changeState={setDialogue} />
-          )}
-        </AnimatePresence>
+        <div onClick={(event) => event.stopPropagation()}>
+          <AnimatePresence mode="wait">
+            {dialogue && (
+              <Dialog character="character1" changeState={setDialogue} />
+            )}
+          </AnimatePresence>
+        </div>
       </div>
     </Page>
   );
