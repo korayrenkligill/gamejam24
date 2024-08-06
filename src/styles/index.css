@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  font-family: "Dosis", sans-serif;
+  font-weight: 400;
+  user-select: none;
+}
+:root {
+  --primary: #024ec7;
+  --onPrimary: #ffffff;
+  --secondary: #0b65f3;
+  --onSecondary: #ffffff;
+  --primaryText: #313131;
+  --secondaryText: #4d4d4d;
+  --primaryBackground: #ffffff;
+  --secondaryBackground: #f7f7f7;
+  --success: #00c851;
+  --onSuccess: #007e33;
+  --warn: #ffbb33;
+  --onWarn: #ff8800;
+  --error: #ff4444;
+  --onError: #cc0000;
+  --info: #33b5e5;
+  --onInfo: #0099cc;
+  --black: #000000;
+  --onBlack: #ffffff;
+
+  font-size: 22px;
+}
+body {
+  /* font-family: "Inter", sans-serif, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif; */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  max-width: 100vw;
+  background-color: var(--primaryBackground);
+}
+button {
+  background-color: transparent;
+  border: none;
+}
+ul {
+  list-style: none;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}

@@ -1,0 +1,76 @@
+.bookmarks {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  z-index: 999;
+  .bookmark {
+    width: 100px;
+    height: 100px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    p {
+      margin-bottom: 1rem;
+      color: #bba67b;
+      opacity: 0.3;
+    }
+    p.active {
+      margin-bottom: 1rem;
+      color: #494131;
+      opacity: 1;
+    }
+  }
+}
+
+.images {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  padding: 5rem;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 0.5rem;
+  overflow: hidden;
+
+  .image {
+    border: 5px solid black;
+    height: 200px;
+    padding: 0.2rem 0.2rem 1.5rem 0.2rem;
+    background-color: #efebe2;
+    position: relative;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+    p {
+      color: #8a7f65;
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 0.75rem;
+      bottom: calc(0.75rem - 0.375rem - 0.5rem);
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .bookmarks {
+    gap: 0.5rem;
+    .bookmark {
+      width: 60px;
+      height: 60px;
+      p {
+        font-size: 0.75rem;
+        margin-bottom: 0.75rem;
+      }
+    }
+  }
+}

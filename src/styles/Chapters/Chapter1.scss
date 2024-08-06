@@ -1,0 +1,84 @@
+.chapter-container {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .bg {
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    background-size: contain;
+  }
+  .mainTree {
+    width: 200px;
+    height: 400px;
+    position: absolute;
+    bottom: 0rem;
+    right: 0rem;
+    z-index: 1;
+    background-color: #abc2e7;
+    border-radius: 1rem;
+  }
+  .stone {
+    width: 200px;
+    height: 400px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    background-color: #9cb7e2;
+    border-radius: 1rem;
+  }
+  .backTree1 {
+    width: 100px;
+    height: 200px;
+    opacity: 0.7;
+    // background-color: rgb(0, 70, 0);
+    position: absolute;
+    bottom: 300px;
+    left: 0;
+    z-index: 0;
+    background-color: #7495c9;
+    border-radius: 1rem;
+  }
+  .backTree2 {
+    width: 100px;
+    height: 200px;
+    opacity: 0.7;
+    position: absolute;
+    bottom: 350px;
+    right: 0;
+    z-index: 0;
+    background-color: #678bc5;
+    border-radius: 1rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .chapter-container {
+    .character1 {
+      width: 250px;
+      height: 250px;
+      left: calc(50% - 125px);
+    }
+    .mainTree {
+      width: 100px;
+      height: 400px;
+    }
+    .stone {
+      width: 100px;
+      height: 400px;
+    }
+    .backTree1 {
+      width: 50px;
+      height: 200px;
+    }
+    .backTree2 {
+      width: 50px;
+      height: 200px;
+    }
+  }
+}

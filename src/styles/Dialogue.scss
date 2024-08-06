@@ -1,0 +1,42 @@
+.dialogue {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  min-height: 200px;
+  background-color: rgba(0, 0, 0, 0.452);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 9999;
+  .buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem;
+    width: 100%;
+  }
+  p {
+    flex: 1;
+  }
+  // .dialogue-prev {
+  //   position: absolute;
+  //   left: 1rem;
+  //   bottom: 1rem;
+  // }
+  // .dialogue-next {
+  //   position: absolute;
+  //   right: 1rem;
+  //   bottom: 1rem;
+  // }
+  button {
+    font-size: 0.875rem;
+    padding: 0.2rem 1rem;
+    background-color: white;
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+    border: 5px solid black;
+  }
+}
