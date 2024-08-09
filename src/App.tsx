@@ -24,6 +24,7 @@ import Chapter6 from "./Pages/Chapters/Chapter6";
 import Chapter7 from "./Pages/Chapters/Chapter7";
 import Chapter8 from "./Pages/Chapters/Chapter8";
 import Snowfall from "./components/Snowfall";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Loading = () => {
   const chapter = useAtomValue(pageAtom);
@@ -45,10 +46,17 @@ const Loading = () => {
 };
 
 function App() {
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+  const chapterParam = queryParams.get("chapter");
+  const chapter = chapterParam ? parseInt(chapterParam, 10) : NaN; // chapter parametresini sayıya çevir
+  const isValidChapter = !isNaN(chapter) && chapter >= 0 && chapter <= 8;
+  const navigate = useNavigate();
+
   const audioRef = useRef<HTMLAudioElement>(null);
   const items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]; // Örnek objeler
 
-  const [chapter, setChapter] = useAtom<number>(pageAtom);
+  const [chapterState, setChapterState] = useAtom<number>(pageAtom);
   const [isMuted, setIsMuted] = useAtom(isMutedAtom);
   const musicStatus = useAtomValue(musicStatusAtom);
 
@@ -98,20 +106,20 @@ function App() {
   };
 
   useEffect(() => {
-    if (chapter === 3) {
-      setChapter(4);
+    if (chapterState === 3) {
+      setChapterState(4);
     }
-    if (chapter === 6 || chapter === 7) {
-      setChapter(8);
+    if (chapterState === 6 || chapterState === 7) {
+      setChapterState(8);
     }
-
-    if (chapter !== 0) {
+    navigate("/?chapter=" + chapterState, { replace: true });
+    if (chapterState !== 0) {
       setLoading(true);
       setTimeout(() => {
         setLoading(false);
       }, 2000);
     }
-  }, [chapter]);
+  }, [chapterState]);
 
   useEffect(() => {
     setTimeout(toggleMute, 500);
@@ -131,6 +139,12 @@ function App() {
     }
   }, [soundVolume]);
 
+  useEffect(() => {
+    if (isValidChapter) {
+      setChapterState(chapter);
+    }
+  }, []);
+
   return (
     <div className="App">
       <Snowfall />
@@ -139,7 +153,7 @@ function App() {
         Tarayıcınız audio elementini desteklemiyor.
       </audio>
       <AnimatePresence mode="wait">
-        {chapter === 0 && (
+        {chapterState === 0 && (
           <StartPage key="mainpage">
             <Mainpage />
           </StartPage>
@@ -147,7 +161,7 @@ function App() {
         {loading ? (
           <Loading key={"loading"} />
         ) : (
-          chapter >= 1 && chapter <= 8 && getChapter(chapter)
+          chapterState >= 1 && chapterState <= 8 && getChapter(chapterState)
         )}
       </AnimatePresence>
       <div

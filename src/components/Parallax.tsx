@@ -50,7 +50,8 @@ const Parallax: React.FC<ParallaxProps> = ({
 
   const combinedStyle: CSSProperties = {
     ...style,
-    transform: `translate(${offset.x}px, ${offset.y}px)`,
+    transform:
+      window.innerWidth > 768 ? `translate(${offset.x}px, ${offset.y}px)` : "",
     transition: "transform 0.1s",
   };
 

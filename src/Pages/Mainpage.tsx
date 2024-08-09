@@ -34,12 +34,12 @@ const Mainpage = (props: Props) => {
                   setMusicStatus(true);
                 }}
               >
-                Start
+                Başla
               </div>
             </Parallax>
             <Parallax strength={0.045}>
               <div className="nav-button" onClick={() => setMenu("extra")}>
-                Fast Travel <span>{">"}</span>
+                Hızlı Seyahat <span>{">"}</span>
               </div>
             </Parallax>
             {/* <Parallax strength={0.045}>
@@ -47,7 +47,7 @@ const Mainpage = (props: Props) => {
             </Parallax> */}
             <Parallax className="exit-button" strength={0.055}>
               <div onClick={() => window.close()} className="nav-button">
-                Exit
+                Çıkış
               </div>
             </Parallax>
           </motion.div>

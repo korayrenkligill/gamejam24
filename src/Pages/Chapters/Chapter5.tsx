@@ -8,21 +8,19 @@ import "../../styles/Chapters/Chapter5.scss";
 import { useState } from "react";
 
 const images2023: string[] = [
-  "/images/2023Images/DF4B9EEC-1936-42E5-8C42-6F3EE8732903.JPG",
-  "/images/2023Images/DSC01081.JPG",
-  "/images/2023Images/DSC01083.JPG",
-  "/images/2023Images/IMG_5839.jpg",
-  "/images/2023Images/IMG_7230.JPEG",
+  "/images/2023Images/DF4B9EEC-1936-42E5-8C42-6F3EE8732903.webp",
+  "/images/2023Images/DSC01081.webp",
+  "/images/2023Images/DSC01083.webp",
+  "/images/2023Images/IMG_5839.webp",
+  "/images/2023Images/IMG_7230.webp",
 ];
 const images2022: string[] = [];
 
 type Props = {};
 
 const container = {
-  hidden: { opacity: 1, scale: 0 },
+  hidden: {},
   visible: {
-    opacity: 1,
-    scale: 1,
     transition: {
       delayChildren: 0.3,
       staggerChildren: 0.2,
@@ -31,9 +29,8 @@ const container = {
 };
 
 const item = {
-  hidden: { y: 20, opacity: 0 },
+  hidden: { opacity: 0 },
   visible: {
-    y: 0,
     opacity: 1,
   },
 };
@@ -101,6 +98,7 @@ const Chapter5 = ({}: Props) => {
                   }}
                 >
                   <img
+                    loading="lazy"
                     src={image}
                     alt="2023"
                     style={{
