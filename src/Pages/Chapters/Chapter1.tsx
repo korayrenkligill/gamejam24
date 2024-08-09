@@ -41,7 +41,7 @@ const Chapter1 = ({}: Props) => {
             color: "white",
             zIndex: 888,
             textAlign: "center",
-            fontSize: ".875rem",
+            fontSize: "1.2rem",
           }}
         >
           Mesaj için Tıkla
