@@ -92,10 +92,6 @@ const Mainpage = (props: Props) => {
                   setChapter(3);
                   setMusicStatus(true);
                 }}
-                style={{
-                  opacity: ".5",
-                  pointerEvents: "none",
-                }}
               >
                 <p>Ödüller - Jüriler</p>
                 <span>( Bölüm 3 )</span>

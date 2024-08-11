@@ -106,9 +106,9 @@ function App() {
   };
 
   useEffect(() => {
-    if (chapterState === 3) {
-      setChapterState(4);
-    }
+    // if (chapterState === 3) {
+    //   setChapterState(4);
+    // }
     if (chapterState === 6 || chapterState === 7) {
       setChapterState(8);
     }

@@ -1,0 +1,100 @@
+.awards {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 100px;
+  .award {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5rem;
+    position: relative;
+    padding: 0.5rem 1rem 0.5rem 1.5rem;
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+    background-color: #efebe2;
+    border: 3px solid black;
+    img {
+      width: 100px;
+      position: absolute;
+      left: calc(-100px + 1rem);
+      transform: scaleX(-1) rotateZ(-10deg);
+    }
+  }
+  .cup1 {
+    order: 2;
+    transform: scale(1.1);
+  }
+  .cup2 {
+    order: 1;
+    transform: scale(1);
+  }
+  .cup3 {
+    order: 3;
+    transform: scale(0.9);
+  }
+}
+.juries {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 3rem;
+  .jury {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    img {
+      width: 100px;
+      height: 100px;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      object-position: center;
+      transform: translateY(0.5rem);
+      border-radius: 70% 90% 85% 100%/100% 85% 90% 70%;
+      background-color: #efebe2;
+      border: 3px solid white;
+      outline: 3px solid black;
+    }
+    .information {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+      background-color: #efebe2;
+      border: 3px solid white;
+      outline: 3px solid black;
+      padding: 0.5rem 1rem;
+      text-wrap: nowrap;
+      p {
+        font-size: 1rem;
+        font-weight: bold;
+      }
+      span {
+        font-size: 0.8rem;
+        opacity: 0.3;
+      }
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .awards {
+    flex-direction: column;
+    gap: 2.5rem;
+    .cup1 {
+      order: 1;
+    }
+    .cup2 {
+      order: 2;
+    }
+  }
+  .juries {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .container {
+    padding: 6rem 0;
+  }
+}
