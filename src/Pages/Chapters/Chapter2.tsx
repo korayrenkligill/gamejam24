@@ -11,10 +11,9 @@ import { pageAtom } from "../../state/pageState";
 type Props = {};
 
 const container = {
-  hidden: { opacity: 1, scale: 0 },
+  hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    scale: 1,
     transition: {
       delayChildren: 0.3,
       staggerChildren: 0.2,
@@ -23,9 +22,8 @@ const container = {
 };
 
 const item = {
-  hidden: { y: 20, opacity: 0 },
+  hidden: { opacity: 0 },
   visible: {
-    y: 0,
     opacity: 1,
   },
 };
@@ -49,9 +47,9 @@ const Chapter2 = ({}: Props) => {
   }, [dialogue]);
   return (
     <Page>
-      <button className="nextChapterButton" onClick={nextChapter}>
+      {/* <button className="nextChapterButton" onClick={nextChapter}>
         Sonraki Bölüm..
-      </button>
+      </button> */}
       <div className="about-jam">
         <motion.div
           className="about-jam-container"
@@ -60,30 +58,30 @@ const Chapter2 = ({}: Props) => {
           variants={container}
           transition={{ duration: 0.1 }}
         >
-          <motion.h1 variants={item} className="title">
-            GameJam Nedir?
-          </motion.h1>
-          <motion.p variants={item} className="description">
-            Game Jam, oyun geliştirme süreçlerini hızlandırarak katılımcıların
-            48 saat içinde sıfırdan oyun geliştirmelerini amaçlayan
-            etkinliklerdir. Katılımcılar, genellikle takımlar halinde çalışır ve
-            kısıtlı zaman içinde yaratıcılıklarını kullanarak bir oyun tasarlar
-            ve geliştirir.
-          </motion.p>
-          <motion.h3 variants={item} className="title">
-            Kimler katılabilir?
-          </motion.h3>
-          <motion.p variants={item} className="description">
-            Game Jam etkinliğimiz, oyun geliştirme dünyasına adım atmak isteyen
-            herkes için harika bir fırsat! İster profesyonel bir oyun
-            tasarımcısı olun, ister programlama ile yeni tanışmış bir amatör ya
-            da sadece yaratıcı fikirlerinizle katkıda bulunmak isteyen biri
-            olun, herkes bu heyecan verici etkinliklere katılabilir. Kendi
-            ekibinizi kurabilir veya mevcut ekiplerle birleşebilirsiniz. Bu
-            etkinlikler, yeni insanlarla tanışmak, harika projelere imza atmak
-            ve eğlenceli bir şekilde yeteneklerinizi test etmek için mükemmel
-            bir yerdir. Katılmak için kayıt olmayı unutmayın!
-          </motion.p>
+          <motion.div variants={item}>
+            <h1 className="title">GameJam Nedir?</h1>
+            <p className="description">
+              Game Jam, oyun geliştirme süreçlerini hızlandırarak katılımcıların
+              48 saat içinde sıfırdan oyun geliştirmelerini amaçlayan
+              etkinliklerdir. Katılımcılar, genellikle takımlar halinde çalışır
+              ve kısıtlı zaman içinde yaratıcılıklarını kullanarak bir oyun
+              tasarlar ve geliştirir.
+            </p>
+          </motion.div>
+          <motion.div variants={item}>
+            <h1 className="title">Kimler katılabilir?</h1>
+            <p className="description">
+              Game Jam etkinliğimiz, oyun geliştirme dünyasına adım atmak
+              isteyen herkes için harika bir fırsat! İster profesyonel bir oyun
+              tasarımcısı olun, ister programlama ile yeni tanışmış bir amatör
+              ya da sadece yaratıcı fikirlerinizle katkıda bulunmak isteyen biri
+              olun, herkes bu heyecan verici etkinliklere katılabilir. Kendi
+              ekibinizi kurabilir veya mevcut ekiplerle birleşebilirsiniz. Bu
+              etkinlikler, yeni insanlarla tanışmak, harika projelere imza atmak
+              ve eğlenceli bir şekilde yeteneklerinizi test etmek için mükemmel
+              bir yerdir. Katılmak için kayıt olmayı unutmayın!
+            </p>
+          </motion.div>
         </motion.div>
       </div>
     </Page>

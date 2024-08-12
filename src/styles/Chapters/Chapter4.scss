@@ -6,6 +6,9 @@
   gap: 0.2rem;
   margin-bottom: 1rem;
   color: white;
+  text-align: center;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5),
+    -1px -1px 3px rgba(255, 255, 255, 0.5);
   .date {
     font-size: 0.875rem;
     color: white;

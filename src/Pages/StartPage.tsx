@@ -7,6 +7,11 @@ type Props = {
 const StartPage = ({ children }: Props) => {
   return (
     <motion.div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+      }}
       initial={{ opacity: 1 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: "100%" }}

@@ -1,25 +1,14 @@
 import Page from "../Page";
 
 import "../../styles/Chapters/Chapter4.scss";
-import { useSetAtom } from "jotai";
-import { pageAtom } from "../../state/pageState";
 import Countdown from "../../components/CountDown";
 
 type Props = {};
 
 const Chapter4 = ({}: Props) => {
-  const setChapter = useSetAtom(pageAtom);
-  const nextChapter = () => {
-    setChapter((oldChapter) => oldChapter + 1);
-  };
   return (
     <Page>
-      <button className="nextChapterButton" onClick={nextChapter}>
-        Sonraki Bölüm..
-      </button>
-
       <Countdown />
-
       <div className="map">
         <div className="mapContainer">
           <iframe

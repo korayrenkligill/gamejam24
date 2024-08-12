@@ -3,6 +3,7 @@
   align-items: center;
   justify-content: center;
   gap: 100px;
+  margin-top: 1rem;
   .award {
     display: flex;
     flex-direction: column;
@@ -22,15 +23,15 @@
   }
   .cup1 {
     order: 2;
-    transform: scale(1.1);
+    transform: translateX(25px) scale(1.1) !important;
   }
   .cup2 {
     order: 1;
-    transform: scale(1);
+    transform: translateX(25px) scale(1) !important;
   }
   .cup3 {
     order: 3;
-    transform: scale(0.9);
+    transform: translateX(25px) scale(0.9) !important;
   }
 }
 .juries {
@@ -93,8 +94,5 @@
   .juries {
     flex-direction: column;
     gap: 1rem;
-  }
-  .container {
-    padding: 6rem 0;
   }
 }

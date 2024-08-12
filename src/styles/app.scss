@@ -1,26 +1,48 @@
 .App {
   max-width: 100vw;
   min-height: 100vh;
-  overflow: hidden;
-  // background-color: #bfcadc;
   background: linear-gradient(180deg, #bfcadc, #a6b4ca);
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  overflow: hidden;
 }
 .page {
-  width: 100vw;
-  min-height: 100vh;
+  height: 80vh;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+}
+
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.next-container {
+  position: relative;
+  z-index: 9999;
+  display: flex;
   align-items: center;
   justify-content: center;
 }
 
+.buttons-container {
+  position: relative;
+  z-index: 9999;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+}
+
 .soundContainer {
-  position: fixed;
-  bottom: 1rem;
-  right: 1rem;
-  z-index: 999999;
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   font-size: 1.2rem;
   display: flex;
   align-items: center;
@@ -34,23 +56,33 @@
     background-color: #d6cebb;
     .value-container {
       position: fixed;
-      bottom: calc(1rem + 60px);
+      bottom: calc(0.5rem + 50px);
       padding-bottom: 0.3rem;
       display: flex;
       flex-direction: column-reverse;
-      gap: 0.2rem;
       transition: opacity 0.3s;
       .value {
         border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
-        width: 30px;
-        height: 15px;
+        width: 20px;
+        height: 10px;
         background-color: white;
         transition: background-color 0.3s;
-        border: 2px solid black;
+        border: 1px solid black;
       }
       .hovered,
       .active {
         background-color: #94add6;
+      }
+
+      /* Son 6 eleman */
+      .hovered:nth-last-child(-n + 6),
+      .active:nth-last-child(-n + 6) {
+        background-color: #ffb05e; /* Turuncu */
+      }
+
+      .hovered:nth-last-child(-n + 3),
+      .active:nth-last-child(-n + 3) {
+        background-color: #ff5e5e; /* Kırmızı */
       }
     }
   }
@@ -59,15 +91,29 @@
   }
 }
 
+.back-menu-container {
+  width: 50px;
+  height: 50px;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #efebe2;
+  border-radius: 70% 90% 85% 100%/100% 85% 90% 70%;
+  border: 3px solid black;
+  color: black;
+  overflow: hidden;
+}
+.back-menu-container:disabled {
+  opacity: 0.5;
+}
+
 .loading {
-  width: 100vw;
-  height: 100vh;
-  padding: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  .container {
+  .loading-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -92,17 +138,42 @@
 
 .nextChapterButton {
   text-wrap: nowrap;
-  position: fixed;
-  top: 1rem;
-  left: 50%;
-  transform: translateX(-50%);
   padding: 0.3rem 1rem;
   font-size: 0.875rem;
   border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
   background-color: #efebe2;
   border: 2px solid black;
-  z-index: 99999999;
   &:hover {
     background-color: #d6cebb;
+  }
+}
+
+@media (min-width: 640px) {
+  .container {
+    max-width: 640px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1536px;
   }
 }

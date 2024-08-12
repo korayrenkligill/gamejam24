@@ -26,6 +26,24 @@ const Mainpage = (props: Props) => {
             exit={{ x: "100%" }}
             transition={{ duration: 0.2 }}
           >
+            <Parallax className="start-button" strength={0.035}>
+              <div
+                className="main-logo"
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  gap: "1rem",
+                }}
+              >
+                <img
+                  src="/images/logo-bbt.png"
+                  alt="logo"
+                  style={{ width: "auto", height: "100%", maxHeight: "100px" }}
+                />
+                +<p>Gamejam Logo</p>
+              </div>
+            </Parallax>
             <Parallax className="start-button" strength={0.04}>
               <div
                 className="nav-button"
@@ -42,14 +60,14 @@ const Mainpage = (props: Props) => {
                 Hızlı Seyahat <span>{">"}</span>
               </div>
             </Parallax>
-            {/* <Parallax strength={0.045}>
-              <div className="nav-button">Mode</div>
-            </Parallax> */}
-            <Parallax className="exit-button" strength={0.055}>
+            <Parallax strength={0.05}>
+              <div className="nav-button">Etkinliğe Katıl</div>
+            </Parallax>
+            {/* <Parallax className="exit-button" strength={0.055}>
               <div onClick={() => window.close()} className="nav-button">
                 Çıkış
               </div>
-            </Parallax>
+            </Parallax> */}
           </motion.div>
         )}
         {menu === "extra" && (
@@ -69,7 +87,7 @@ const Mainpage = (props: Props) => {
                   setMusicStatus(true);
                 }}
               >
-                <p>GameJam Nedir?</p>
+                <p>BBT Kimdir?</p>
                 <span>( Bölüm 1 )</span>
               </div>
             </Parallax>
@@ -81,7 +99,7 @@ const Mainpage = (props: Props) => {
                   setMusicStatus(true);
                 }}
               >
-                <p>BBT Kimdir?</p>
+                <p>GameJam Nedir?</p>
                 <span>( Bölüm 2 )</span>
               </div>
             </Parallax>
@@ -92,9 +110,14 @@ const Mainpage = (props: Props) => {
                   setChapter(3);
                   setMusicStatus(true);
                 }}
+                style={{
+                  opacity: ".5",
+                  pointerEvents: "none",
+                }}
               >
                 <p>Ödüller - Jüriler</p>
-                <span>( Bölüm 3 )</span>
+                <span>( yakında eklenecek )</span>
+                {/* <span>( Bölüm 3 )</span> */}
               </div>
             </Parallax>
             <Parallax strength={0.055}>
@@ -128,10 +151,6 @@ const Mainpage = (props: Props) => {
                   setChapter(6);
                   setMusicStatus(true);
                 }}
-                style={{
-                  opacity: ".5",
-                  pointerEvents: "none",
-                }}
               >
                 <p>Etkinlik Programı - Yan Etkinlikler</p>
                 <span>( Bölüm 6 )</span>
@@ -150,7 +169,8 @@ const Mainpage = (props: Props) => {
                 }}
               >
                 <p>Sponsorlar</p>
-                <span>( Bölüm 7 )</span>
+                <span>( yakında eklenecek )</span>
+                {/* <span>( Bölüm 7 )</span> */}
               </div>
             </Parallax>
             <Parallax strength={0.06}>

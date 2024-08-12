@@ -13,7 +13,7 @@ const Page = ({ children }: Props) => {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
     >
-      {children}
+      <div className="container">{children}</div>
     </motion.div>
   );
 };

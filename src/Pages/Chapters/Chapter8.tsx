@@ -1,6 +1,4 @@
 import "../../styles/Chapters/Chapter8.scss";
-import { useSetAtom } from "jotai";
-import { pageAtom } from "../../state/pageState";
 import Page from "../Page";
 import { FaPhone } from "react-icons/fa6";
 import { IoMdMail } from "react-icons/io";
@@ -10,30 +8,23 @@ import Parallax from "../../components/Parallax";
 type Props = {};
 
 const Chapter8 = ({}: Props) => {
-  const setChapter = useSetAtom(pageAtom);
-  const nextChapter = () => {
-    setChapter((oldChapter) => 0);
-  };
   return (
     <Page>
-      <button className="nextChapterButton" onClick={nextChapter}>
-        Back to Menu
-      </button>
       <div className="contacts">
         <Parallax strength={0.01}>
-          <div className="contact">
-            <FaPhone /> <span>0212 123 45 67</span>
-          </div>
+          <a href="tel:+90 546 801 67 13" className="contact">
+            <FaPhone /> <span>+90 546 801 67 13</span>
+          </a>
         </Parallax>
         <Parallax strength={0.015}>
-          <div className="contact">
-            <IoMdMail /> <span>asdf@info.com</span>
-          </div>
+          <a href="mailto:dpubilgisayarvebilisim@gmail.com" className="contact">
+            <IoMdMail /> <span>dpubilgisayarvebilisim@gmail.com</span>
+          </a>
         </Parallax>
         <Parallax strength={0.02}>
-          <div className="contact">
+          <a href="https://www.instagram.com/dpubbt/" className="contact">
             <AiFillInstagram /> <span>@dpubbt</span>
-          </div>
+          </a>
         </Parallax>
       </div>
     </Page>

@@ -53,6 +53,7 @@ const Parallax: React.FC<ParallaxProps> = ({
     transform:
       window.innerWidth > 768 ? `translate(${offset.x}px, ${offset.y}px)` : "",
     transition: "transform 0.1s",
+    overflow: "visible",
   };
 
   return (

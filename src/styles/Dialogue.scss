@@ -3,7 +3,6 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  min-height: 200px;
   background-color: rgba(0, 0, 0, 0.452);
   color: white;
   display: flex;
@@ -11,17 +10,20 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  z-index: 9999;
-  padding-bottom: 4rem;
+  z-index: 99999;
+  padding-bottom: 1rem;
   .buttons {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    // justify-content: space-between;
     padding: 0.5rem;
     width: 100%;
+    gap: 2rem;
   }
   p {
     flex: 1;
+    padding: 0.5rem calc(1rem + 50px + 0.5rem);
   }
   // .dialogue-prev {
   //   position: absolute;
